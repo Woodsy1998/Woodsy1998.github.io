@@ -539,7 +539,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const portfolioItems = [
       { image: "images/cloudland-placeholder.webp", title: "Cloudland", desc: "Q-SYS ecosystem upgrade.", link: "cloudland.html" },
-      { image: "images/cloudland-placeholder.webp", title: "Beaumont Hotel", desc: "Corporate AV solutions.", link: "beaumont-hotel.html" },
+      { image: "images/the-beaumont-rooftop.jpg", title: "Beaumont Hotel", desc: "Multi-level AV control systems.", link: "beaumont-hotel.html" },
       { image: "images/cloudland-placeholder.webp", title: "The Met", desc: "Smart home automation.", link: "the-met.html" },
       { image: "images/cloudland-placeholder.webp", title: "Tiny Mountain Brewery", desc: "Outdoor sound systems.", link: "outdoor-sound.html" },
       { image: "images/cloudland-placeholder.webp", title: "Crowbar Brisbane", desc: "Advanced Q-SYS solutions.", link: "qsys-programming.html" },
