@@ -1,0 +1,22 @@
+<!-- zigzag.svg -->
+<svg 
+  width="60" height="60" 
+  viewBox="0 0 60 60"
+  xmlns="http://www.w3.org/2000/svg">
+
+  <!-- First zigzag line near the top -->
+  <path 
+    d="M0,10 L10,0 L20,20 L30,0 L40,20 L50,0 L60,10"
+    stroke="white"
+    stroke-width="2"
+    fill="none"
+  />
+  
+  <!-- Second zigzag line near the bottom -->
+  <path 
+    d="M0,50 L10,40 L20,60 L30,40 L40,60 L50,40 L60,50"
+    stroke="white"
+    stroke-width="2"
+    fill="none"
+  />
+</svg>

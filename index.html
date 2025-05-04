@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Carbonem AV Installation – Professional Q-SYS and AV solutions." />
+  <meta name="keywords" content="AV, Q-SYS, Installation, Audio, Video, Integration, Solutions" />
+  <meta name="author" content="Carbonem" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carbonem</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HAMBURGER / MENU ICON -->
+    <div class="hamburger" id="hamburgerBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+  </div>
+  <div class="menu-overlay" id="menuOverlay">
+    <ul>
+      <!-- Each link uses the pseudo-element technique for outline→fill hover. -->
+      <li><a href="index.html" class="hover-outline" data-text="Home">Home</a></li>
+      <li><a href="portfolio.html" class="hover-outline" data-text="Portfolio">Portfolio</a></li>
+      <li><a href="shop.html" class="hover-outline" data-text="Shop">Shop</a></li>
+      <li><a href="contact.html" class="hover-outline" data-text="Contact">Contact</a></li>
+    </ul>
+  </div>
+
+<!-- HERO SECTION -->
+<section id="hero" class="page-section">
+    <!-- Background Video -->
+
+    <div class="section-content">
+      <!-- Use a separate <span> to contain the rotating words -->
+        <h1>
+            <span class ="smalltext">We are...<br></span>
+            <span id="typedTarget"></span>
+        </h1>
+      <p class="tagline">Take your AV control systems to the next level.</p>
+      <a class="cta-button" href="#contact">Let's chat</a>
+    </div>
+  </section>
+  
+
+  <!-- SERVICES SECTION -->
+  <section id="services" class="page-section">
+    <div class="services-wrapper">
+        <!-- Left column: clickable headings -->
+        <div class="services-left">
+          <!-- Each service heading = .service-item with data-body attribute -->
+          <div class="service-item" data-service-body="We can design entire AV systems from the ground up. We'll cover everything from acoustic modelling for optimum speaker placement, to intelligent lighting systems, TV and vision control, automation, user control interfaces, and much more. We'll handle everything required to run it from the cabling to the network infrastructure.">
+            <h3 data-text="Design">Design</h3>
+          </div>
+          <div class="service-item" data-service-body="Have existing systems but lacking the finesse of an expertly crafted control interface? We can work with your existing equipment and bring your control capabilities to a whole new level.">
+            <h3 data-text="Integrate">Integrate</h3>
+          </div>
+          <div class="service-item" data-service-body="Looking to upgrade anything and everything AV? We'll work with you to overhaul any and all aspects of your systems, using the latest technology to ensure you're operating in the next generation.">
+            <h3 data-text="Overhaul">Overhaul</h3>
+          </div>
+          <div class="service-item" data-service-body="We can remotely monitor any system we install, ensuring we're in the know before you in the event of any issues. We can work with your technicians and ensure they're supported in every way.">
+            <h3 data-text="Monitor">Monitor</h3>
+          </div>
+          <div class="service-item" data-service-body="Needing regular maintenance on your Carbonem installation? Our expert technicians can service and maintain all of your AV equipment, keeping it spick-and-span for flawless operation.">
+            <h3 data-text="Service">Service</h3>
+          </div>
+        </div>
+  
+        <!-- Right column: typed text container + custom cursor element -->
+        <div class="services-right">
+          <!-- We add the "pre-spaced" container so first line starts in final position. 
+               We do it by adding a top padding or blank lines. -->
+          <div id="servicesTextContainer">
+            <!-- The typed text will go here: -->
+            <span id="servicesTyped"></span>
+            <!-- The custom cursor absolutely positioned inside: -->
+            <span id="servicesCursor"></span>
+          </div>
+        </div>
+      </div>
+  </section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="page-section">
+    <!-- First Column -->
+    <div class="section-content questionnaire-column">
+      <h2>Let me get to know you</h2>
+      <p>
+        If you've got the time, I'd love to ask you some questions so I can better
+        understand what you need. Otherwise, just reach out via the contact form
+        and I'll be in touch.
+      </p>
+      <button id="questionnaireBtn">Take Questionnaire</button>
+    </div>
+  
+    <!-- Second Column -->
+    <div class="section-content form-column">
+      <h2>Reach out and get started</h2>
+      <form id="contact-form" method="POST" action="/contact">
+        <div class="form-field">
+          <label for="name">Name <span>*</span></label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-field">
+          <label for="email">Email <span>*</span></label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" />
+        </div>
+        <div class="form-field">
+          <label for="message">Message <span>*</span></label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </section>
+  
+  <!-- Overlay for Questionnaire -->
+  <div id="questionnaireOverlay" class="overlay">
+    <div class="overlay-content">
+      <button class="close-btn" id="closeOverlay">&times;</button>
+      <form id="questionnaireForm">
+        <!-- Page 1: Basic Info -->
+        <div class="question-page active">
+          <h2>Get Started</h2>
+          <div class="form-field">
+            <label for="qName">Name <span>*</span></label>
+            <input type="text" id="qName" name="qName" required />
+          </div>
+          <div class="form-field">
+            <label for="qEmail">Email <span>*</span></label>
+            <input type="email" id="qEmail" name="qEmail" required />
+          </div>
+          <div class="form-field">
+            <label for="qPhone">Phone</label>
+            <input type="text" id="qPhone" name="qPhone"/>
+          </div>
+          <div class="form-field">
+            <label for="qCompany">Company</label>
+            <input type="text" id="qCompany" name="qCompany"/>
+          </div>
+          <button type="button" class="next-btn">Next</button>
+        </div>
+  
+        <!-- Page 2: Your current situation -->
+        <div class="question-page">
+          <h2>Your situation</h2>
+          <p>What best describes why you're reaching out today?</p>
+        <!-- Radio Group -->
+        <div class="radio-group">
+            <label class="radio-field">
+              <input type="radio" name="solutionType" value="I'm starting my system or control capabilities from scratch." required>
+              I'm starting my system or control capabilities from scratch.
+            </label>
+            <label class="radio-field">
+              <input type="radio" name="solutionType" value="I'm looking to integrate my existing systems into the latest technology.">
+              I'm looking to integrate my existing systems into the latest technology.
+            </label>
+            <label class="radio-field">
+              <input type="radio" name="solutionType" value="My systems need a major overhaul.">
+              My systems need a major overhaul.
+            </label>
+            <label class="radio-field">
+              <input type="radio" name="solutionType" value="I need someone to take care of servicing my equipment.">
+              I need someone to take care of servicing my equipment.
+            </label>
+            <label class="radio-field">
+                <input type="radio" name="solutionType" value="Other">
+              </label>
+          </div>
+          <button type="button" class="prev-btn">Back</button>
+          <button type="button" class="next-btn">Next</button>
+        </div>
+  
+        <!-- Page 3: Placeholder Questions -->
+        <div class="question-page">
+          <h2>Placeholder Questions (2)</h2>
+          <p>What kind of outcome are you hoping for?</p>
+          <textarea rows="4"></textarea>
+          <button type="button" class="prev-btn">Back</button>
+          <button type="button" class="next-btn">Next</button>
+        </div>
+  
+        <!-- Page 4: Final Step -->
+        <div class="question-page">
+          <h2>Anything else?</h2>
+          <p>Feel free to add any additional comments or questions below:</p>
+          <textarea rows="4"></textarea>
+          <button type="button" class="prev-btn">Back</button>
+          <button type="submit" class="submit-questionnaire-btn">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <script>
+    // Elements
+    const questionnaireBtn = document.getElementById("questionnaireBtn");
+    const questionnaireOverlay = document.getElementById("questionnaireOverlay");
+    const closeOverlay = document.getElementById("closeOverlay");
+    const questionPages = document.querySelectorAll(".question-page");
+    const nextButtons = document.querySelectorAll(".next-btn");
+    const prevButtons = document.querySelectorAll(".prev-btn");
+  
+    // Open overlay
+    questionnaireBtn.addEventListener("click", () => {
+      questionnaireOverlay.style.display = "flex";
+    });
+  
+    // Close overlay
+    closeOverlay.addEventListener("click", () => {
+      questionnaireOverlay.style.display = "none";
+    });
+  
+    // Basic pagination for questionnaire pages
+    let currentPage = 0;
+    showPage(currentPage);
+  
+    nextButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        if (currentPage < questionPages.length - 1) {
+          currentPage++;
+          showPage(currentPage);
+        }
+      });
+    });
+  
+    prevButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        if (currentPage > 0) {
+          currentPage--;
+          showPage(currentPage);
+        }
+      });
+    });
+  
+    function showPage(index) {
+      questionPages.forEach((page, i) => {
+        page.classList.remove("active");
+        if (i === index) {
+          page.classList.add("active");
+        }
+      });
+    }
+  </script>
+  
+  
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Carbonem. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Carbonem AV Installation – Portfolio" />
+  <meta name="keywords" content="AV, Q-SYS, Installation, Portfolio, Projects" />
+  <meta name="author" content="Carbonem" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - Carbonem</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HAMBURGER MENU -->
+  <div class="hamburger" id="hamburgerBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+  </div>
+  <div class="menu-overlay" id="menuOverlay">
+    <ul>
+      <li><a href="index.html" class="hover-outline" data-text="Home">Home</a></li>
+      <li><a href="portfolio.html" class="hover-outline active" data-text="Portfolio">Portfolio</a></li>
+      <li><a href="shop.html" class="hover-outline" data-text="Shop">Shop</a></li>
+      <li><a href="contact.html" class="hover-outline" data-text="Contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO SECTION (Portfolio) -->
+  <section id="hero" class="page-section">
+    <div class="section-content">
+        <h1>
+            <span class="smalltext">We've worked with...<br></span>
+            <span id="typedTargetPortfolio"></span>
+        </h1>
+        <p class="tagline">A showcase of our AV installations and projects.</p>
+        <a class="cta-button" href="#contact">Get in touch</a>
+    </div>
+  </section>
+
+
+  <!-- PORTFOLIO SECTION -->
+  <section id="portfolio" class="page-section">
+    <div class="portfolio-container">
+      <button class="scroll-btn left-btn" id="scrollLeft">&#10094;</button>
+      
+      <div class="portfolio-wrapper" id="portfolioWrapper">
+        <!-- Portfolio Items Will Be Loaded Here Dynamically -->
+      </div>
+
+      <button class="scroll-btn right-btn" id="scrollRight">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Carbonem. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

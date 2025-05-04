@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop - Carbonem</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="shop-body">
+    <div class="hamburger" id="hamburgerBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="menu-overlay" id="menuOverlay">
+      <ul>
+        <li><a href="index.html" class="hover-outline" data-text="Home">Home</a></li>
+        <li><a href="portfolio.html" class="hover-outline active" data-text="Portfolio">Portfolio</a></li>
+        <li><a href="shop.html" class="hover-outline" data-text="Shop">Shop</a></li>
+        <li><a href="contact.html" class="hover-outline" data-text="Contact">Contact</a></li>
+      </ul>
+    </div>
+
+  <section id="shop" class="page-section">
+    <div class="shop-header">
+      <h1>Shop</h1>
+      <div class="category-filter">
+        <button data-category="all" class="active">All</button>
+        <button data-category="home-theater">Home Theater</button>
+        <button data-category="corporate-av">Corporate AV</button>
+        <button data-category="smart-home">Smart Home</button>
+        <button data-category="outdoor-sound">Outdoor Sound</button>
+        <button data-category="qsys-programming">Q-SYS Programming</button>
+      </div>
+    </div>
+
+    <div class="shop-container">
+      <!-- Filter Sidebar -->
+      <aside class="filter-sidebar">
+        <h3>Filters</h3>
+        <div class="filter-group">
+          <label for="price-range">Price Range</label>
+          <input type="range" id="price-range" name="price" min="0" max="5000">
+        </div>
+        <div class="filter-group">
+          <label for="availability">Availability</label>
+          <select id="availability">
+            <option value="all">All</option>
+            <option value="in-stock">In Stock</option>
+            <option value="out-of-stock">Out of Stock</option>
+          </select>
+        </div>
+      </aside>
+
+      <!-- Product Grid -->
+      <div class="product-grid" id="productGrid">
+        <!-- Products will be loaded here dynamically from shopdata.json -->
+      </div>
+    </div>
+  </section>
+
+  <script src="shopscript.js"></script>
+</body>
+</html>

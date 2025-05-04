@@ -1,0 +1,1058 @@
+/* ===============================
+   1. GLOBAL STYLES & RESETS
+   =============================== */
+
+/* Basic “reset” */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+caption, article, aside, details, figcaption,
+figure, footer, header, hgroup, main, nav, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+  vertical-align: baseline;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;  /* For Chrome, Safari, etc. */
+}
+
+/* Base font styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #f0f0f0;      /* light text */
+  background-color: #5C92FF; 
+  margin: 0;
+  padding: 0;
+  /* If you truly want no normal scroll, keep overflow: hidden;
+     Otherwise remove this if you want to allow normal scrolling. */
+  /* overflow: hidden; */
+}
+
+/* Basic link hover style (for your site’s normal links) */
+a {
+  color: #5C92FF;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Headings consistency */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  color: #F1F2F6;
+}
+
+/* Paragraph default */
+p {
+  margin-bottom: 1em;
+  color: #f0f0f0;
+}
+
+/* Container utility example */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===============================
+   2. PAGE SECTIONS 
+   =============================== */
+   @keyframes diagonalLines {
+    0% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+  
+  .page-section {
+    min-height: 100vh;
+    overflow: hidden; /* If you want to hide normal scrollbars or content overflow */
+    position: center;
+/*    padding-left: 20rem;
+    padding-top: 2rem;
+  
+    /*
+      repeating-linear-gradient at -45deg:
+        - "#181925 0px, #181925 2px" => 2px thick #181925 stripe
+        - "transparent 2px, transparent 10px" => 8px gap
+      This yields a 10px total repeat cycle with a 2px #181925 line,    
+      repeated diagonally across the element.
+  
+      If you want white lines, use "white" instead of "#181925".
+    */
+    background: repeating-linear-gradient(
+      -45deg,
+      #181925 0px,
+      #181925 2px,
+      transparent 2px,
+      transparent 10px
+    );
+  
+    /*
+      Larger background-size helps the diagonal motion look smooth.
+      Use 200%, 300%, etc., as needed to make it obvious. 
+    */
+    background-size: 300% 300%;
+  
+    animation: diagonalLines 240s linear infinite;
+  }
+  
+  
+
+.section-content {
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.6s ease;
+  align-items: center;
+  justify-content: center;
+  /* Add any padding/centering as desired */
+}
+
+body.menu-open .section-inner {
+  opacity: 0;
+  pointer-events: none; /* optional: prevent clicks on hidden content */
+}
+
+/* Zoom-out / Zoom-in transitions if you’re using them */
+.zoom-out {
+  transform-origin: centre center;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+.zoom-in {
+  transform-origin: centre center;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+/* ===============================
+   3. HEADER & NAV (EXAMPLE)
+   =============================== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1C1F24; 
+  padding: 0.75rem 1rem;
+}
+.logo img {
+  max-width: 120px;
+  height: auto;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+}
+nav li a {
+  color: #5C92FF;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+nav li a:hover {
+  color: #4cc2ff;
+}
+
+/* ===============================
+   4. HERO SECTION
+   =============================== */
+   .hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Make the video fill the container while maintaining aspect ratio */
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    
+    /* Move the center of the video to the container’s center */
+    transform: translate(-50%, -50%); 
+    z-index: 0; /* Make sure it’s behind the content (or set to 0 if needed) */
+    object-fit: cover; /* For modern browsers: ensures the video covers the container like background-size: cover */
+  }
+#hero video {
+  z-index: 1;
+
+}
+   #hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(120deg, #14171A 30%, #1C1F24 90%);
+  z-index: 500;
+
+}
+#hero h1 {
+  display: inline-block;
+  min-width: 100rem;
+  font-size: 10rem;
+  margin-bottom: 1rem;
+  color: #F1F2F6;
+  text-align: left;
+  z-index: 500;
+}
+
+#hero .smalltext {
+  font-size: 3rem;
+  margin-bottom: 0rem;
+  z-index: 500;
+}
+
+#hero .tagline {
+  font-size: 1.2rem;
+  color: #ced3d7;
+  margin-bottom: 1.5rem;
+  z-index: 500;
+}
+.cta-button {
+  display: inline-block;
+  background-color: #5C92FF;
+  color: #F1F2F6;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+.cta-button:hover {
+  background-color: #4cc2ff;
+}
+
+/* ===============================
+   5. SERVICES, CONTACT, FOOTER
+   =============================== */
+   @keyframes blink {
+    50% { opacity: 0; }
+  }
+  
+  #services {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    background-color: #14171A;
+  }
+  
+  .services-wrapper {
+    display: flex;              /* side-by-side columns */
+    flex-direction: row;        
+    width: 100%;
+    max-width: 1200px;          /* optional container limit */
+    margin: 0 auto;
+    gap: 2rem;                  /* spacing between columns */
+  }
+  
+  .services-description {
+    flex-grow: 1;
+    font-size: 1rem;
+    color: white;
+    max-width: 60%; /* Prevents expansion beyond a reasonable width */
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    white-space: normal; /* Allows text wrapping */
+    word-wrap: break-word; /* Ensures long words wrap correctly */
+  }
+  
+  .service-left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .services-left h3 {
+    position: relative;
+    font-size: 5rem;
+    font-weight: bold;
+    color: transparent;             /* invisible fill */
+    -webkit-text-stroke: 1px white; /* 1px white outline */
+    cursor: pointer;
+    transition: 0.4s all;           /* optional smoothing */
+  }
+
+  .services-left h3::before {
+    content: attr(data-text);
+    position: absolute;
+    color: #F1F2F6;
+    overflow: hidden;
+    width: 0;              /* Start hidden => 0 width */
+    white-space: nowrap;   /* Keep text on one line */
+    -webkit-text-stroke: 0;
+    transition: width 0.4s ease;
+  }
+
+  .services-left h3:hover::before {
+    width: 100%;
+  }
+
+  .services-left h3.active::before {
+    width: 100%;
+  }
+
+  .services-right {
+    flex: 1;                    /* typed text on the right */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    position: relative;
+    padding: 2rem;
+    font-size: 2rem;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%; /* Prevents text from overflowing */
+  }
+
+  #servicesTextContainer, #servicesTyped {
+    text-align: left;   /* same approach */
+    white-space: normal; 
+    word-wrap: break-word; 
+    align-items: center;
+    justify-content: center;
+  }
+
+  .service-item {
+    font-size: 5rem;
+    font-weight: bold;
+    color: transparent;         /* hidden fill */
+    -webkit-text-stroke: 1px white; /* 1px white outline */
+    cursor: pointer;
+    position: relative;
+  }
+
+  #servicesTextContainer {
+    position: relative;
+    width: 100%;
+    min-height: 200px; /* or bigger, to ensure text doesn't shift up */
+    padding: 1rem;
+    /* This ensures the text doesn't shift lines around. 
+       The first line is placed as if we typed from the final location. 
+       We'll do an approach with absolutely placed letters. */
+  }
+  #servicesTyped {
+    position: relative;
+    display: inline-block;
+    overflow-wrap: break-word;
+  }
+  #servicesCursor {
+    position: absolute;
+    width: 2px; 
+    background-color: #F1F2F6;
+    /* blinking effect */
+    animation: blinkCursor 1s steps(2, start) infinite;
+  }
+
+/* CONTACT SECTION BASE */
+#contact {
+  background-color: #1C1F24;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  padding-left: 10%;
+  padding-right: 10%;  
+}
+
+/* Columns */
+.questionnaire-column,
+.form-column {
+  flex: 1;
+  padding: 5%;
+  /* Adjust as needed */
+}
+
+/* Headings */
+#contact h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #F1F2F6;
+}
+
+/* Paragraph styling (optional) */
+#contact p {
+  color: #F1F2F6;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: larger;
+}
+
+/* Questionnaire Button */
+#questionnaireBtn {
+  display: inline-block;
+  background-color: #5C92FF;
+  color: #F1F2F6;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#questionnaireBtn:hover {
+  background-color: #4cc2ff;
+}
+
+/* RADIO GROUP */
+.radio-group {
+  margin-bottom: 1.5rem; /* Similar spacing to form fields */
+  display: flex;
+  flex-direction: column; /* or row if you prefer inline radio buttons */
+  gap: 0.5rem; /* space between each radio-field */
+}
+
+.radio-field {
+  color: #f0f0f0; /* or your desired text color */
+  font-size: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.radio-field input[type="radio"] {
+  margin-right: 0.5rem;
+  cursor: pointer;
+  accent-color: #5C92FF; /* changes the color of the radio bubble in modern browsers */
+}
+
+
+
+/* FORM STYLES */
+#contact-form {
+  max-width: 100%;
+  margin: 0 auto; /* Center if needed inside the column */
+}
+
+.form-field {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.form-field label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #f0f0f0;
+}
+.form-field label span {
+  color: #f46d75; 
+}
+.form-field input,
+.form-field textarea {
+  padding: 0.75rem;
+  border: 1px solid #2c3136;
+  border-radius: 4px;
+  background: #14171A;
+  color: #F1F2F6;
+  font-family: inherit;
+  font-size: 1rem;
+}
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: #5C92FF;
+}
+#contact-form button[type="submit"] {
+  background-color: #5C92FF;
+  color: #F1F2F6;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+#contact-form button[type="submit"]:hover {
+  background-color: #4cc2ff;
+}
+
+/* OVERLAY STYLES */
+.overlay {
+  position: fixed; /* So it stays in place */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #181925;
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure it's above other elements */
+}
+
+.overlay-content {
+  background-color: #1C1F24;
+  padding: 2rem;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 8px;
+  position: relative; /* So close button can be positioned */
+}
+
+.close-btn {
+  background: none;
+  color: #F1F2F6;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.close-btn:hover {
+  color: #f46d75;
+}
+
+/* QUESTIONNAIRE FORM PAGES */
+#questionnaireForm .question-page {
+  display: none; /* hide by default */
+}
+#questionnaireForm .question-page.active {
+  display: block; /* show the active page */
+}
+
+#questionnaireForm h2 {
+  color: #F1F2F6;
+  margin-bottom: 1rem;
+}
+
+#questionnaireForm p {
+  color: #f0f0f0;
+  margin-bottom: 1rem;
+}
+
+#questionnaireForm .form-field {
+  margin-bottom: 1.5rem;
+}
+
+#questionnaireForm .next-btn,
+#questionnaireForm .prev-btn,
+.submit-questionnaire-btn {
+  background-color: #5C92FF;
+  color: #F1F2F6;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+#questionnaireForm .next-btn:hover,
+#questionnaireForm .prev-btn:hover,
+.submit-questionnaire-btn:hover {
+  background-color: #4cc2ff;
+}
+
+footer {
+  background-color: #1C1F24;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+}
+footer p {
+  color: #8a8d8f;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ===============================
+   6. RESPONSIVE DESIGN
+   =============================== */
+@media (max-width: 768px) {
+  /* If you had a nav toggling... but here we have hamburger approach instead */
+  #hero h1 {
+    font-size: 2rem;
+  }
+  #hero .tagline {
+    font-size: 1rem;
+  }
+  #contact-form {
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
+
+/* ===============================
+   7. TYPED CURSOR 
+   =============================== */
+#typedTarget {
+  border-right: 2px solid #F1F2F6; 
+  padding-right: 5px;
+  animation: blinkCursor 0.7s steps(1) infinite;
+  min-width: 200px;
+}
+@keyframes blinkCursor {
+  50% { border-color: transparent; }
+}
+
+/* ===============================
+   8. HAMBURGER MENU & OVERLAY
+   =============================== */
+
+/* The hamburger icon - top-left & fixed on scroll */
+.hamburger {
+  position: fixed;
+  top: 4rem;
+  left: 4rem;
+  z-index: 2000; 
+  width: 2rem;
+  height: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #F1F2F6;
+  border-radius: 2px;
+  transition: transform 0.3s ease;
+}
+
+/* The full screen overlay menu */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(120deg, #14171A 30%, #1C1F24 90%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transform-origin: bottom bottom;
+  transform: scale(1);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  z-index: 1000;
+}
+
+
+
+.menu-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 80px 40px rgba(0, 0, 0, 0); 
+  opacity: 1; 
+  transition: opacity 0.8s ease; 
+}
+
+.menu-overlay.active {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu-overlay.active::before {
+  opacity: 0;
+}
+
+/* Vertical nav list */
+.menu-overlay ul {
+  list-style: none;
+  text-align: center;
+}
+.menu-overlay li {
+  margin: 0rem 0;
+  font-size: 5rem;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.menu-overlay.active li:nth-child(1) {
+  transition-delay: 0.1s;
+  opacity: 1;
+  transform: translateY(0);
+}
+.menu-overlay.active li:nth-child(2) {
+  transition-delay: 0.2s;
+  opacity: 1;
+  transform: translateY(0);
+}
+.menu-overlay.active li:nth-child(3) {
+  transition-delay: 0.3s;
+  opacity: 1;
+  transform: translateY(0);
+}
+.menu-overlay.active li:nth-child(4) {
+  transition-delay: 0.4s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Large link text with outline->fill from left to right */
+.hover-outline {
+  position: relative;
+  display: inline-block;
+  font-size: 5rem;
+  text-decoration: none;
+  color: transparent;       /* outline only at first */
+  -webkit-text-stroke: 1px #F1F2F6;
+  transition: color 0.4s ease;
+}
+.hover-outline::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  color: #F1F2F6;
+  overflow: hidden;
+  width: 0;   /* reveal on hover */
+  -webkit-text-stroke: 0;
+  white-space: nowrap;
+  transition: width 0.4s ease;
+}
+.hover-outline:hover::before {
+  width: 100%;
+}
+
+.menu-overlay.active ~ .hamburger span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.menu-overlay.active ~ .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+.menu-overlay.active ~ .hamburger span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Portfolio Section */
+#portfolio {
+  background-color: #14171A;
+  align-content: center;
+}
+
+
+.portfolio-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.portfolio-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-rows: repeat(2, auto); /* 3 rows */
+  gap: 1.5rem;
+  width: 90%;
+  max-width: 1200px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.portfolio-item {
+  background: #1C1F24;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.portfolio-content {
+  padding: 1rem;
+  color: #F1F2F6;
+}
+
+.portfolio-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-content p {
+  font-size: 1rem;
+  color: #f0f0f0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  background-color: #5C92FF;
+  color: #F1F2F6;
+  border: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+  background-color: #4cc2ff;
+  transform: scale(1.05);
+}
+
+/* Scroll Buttons */
+.scroll-btn {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(92, 146, 255, 0.8);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  border-radius: 50%;
+}
+
+.scroll-btn:hover {
+  background-color: rgba(76, 194, 255, 0.8);
+}
+
+.left-btn {
+  left: -5%;
+}
+
+.right-btn {
+  right: -5%;
+}
+
+/* ===============================
+   ARTICLE PAGES
+   =============================== */
+
+#article {
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  color: #F1F2F6;
+  line-height: 1.8;
+  border-radius: 8px;
+  align-items: center;
+  justify-items: center;
+}
+
+.article-page {
+  background: linear-gradient(120deg, #14171A 30%, #1C1F24 90%);
+}
+
+#article body {
+  overflow: auto;
+}
+
+#article h1 {
+  font-size: 7.5em;
+
+}
+
+#article h2, #article h3 {
+  color: #5C92FF; /* Highlighted headings */
+  margin-bottom: 1rem;
+  font-size: 5em;
+}
+
+#article paragraph {
+  font-size: 10px;
+}
+
+.article-section {
+  justify-content: center;
+}
+
+.article-content {
+  justify-content: center;
+  max-width: 60%;
+}
+
+/* Shop Page Container */
+#shop {
+  padding: 2rem;
+  margin: 0 auto;
+  background: linear-gradient(120deg, #14171A 30%, #1C1F24 90%);
+}
+
+/* Shop Header */
+.shop-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.shop-header h1 {
+  font-size: 3rem;
+  color: #ffffff;
+}
+
+.category-filter {
+  position: sticky; /* Allows it to stay visible when scrolling */
+  top: 0; /* Sticks to the top of the viewport */
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  z-index: 1000; /* Keeps it above content */
+}
+
+
+.category-filter button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+  font-size: 2rem;
+}
+
+.category-filter button:hover,
+.category-filter button.active {
+  background-color: #5C92FF;
+}
+
+/* Shop Container */
+.shop-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+  overflow-y: auto; /* Enables scrolling */
+  max-height: calc(100vh - 100px); /* Adjusts to prevent content cut-off */
+  padding: 1rem;
+}
+
+/* Filter Sidebar */
+.filter-sidebar {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.filter-sidebar h3 {
+  margin-bottom: 1rem;
+  color: black;
+  font-weight: bold;
+}
+
+.filter-group {
+  margin-bottom: 1rem;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: black;
+}
+
+.filter-group input,
+.filter-group select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.product-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.product-item img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.product-item h3 {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  color: black;
+}
+
+.product-item p {
+  color: black;
+}
+
+.product-item button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.product-item button:hover {
+  background-color: #218838;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .shop-container {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.shop-body { /* Change to a class */
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+  vertical-align: baseline;
+  overflow-y: auto; /* Allows scrolling */
+  height: 100vh; /* Ensure it fills the screen */
+  overflow: hidden; /* Prevents extra scrolling */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.shop-container {
+  overflow-y: auto; /* Enables vertical scrolling if needed */
+  max-height: calc(100vh - 100px); /* Adjust height to allow scrolling */
+}

@@ -1,0 +1,58 @@
+[
+    {
+      "id": 1,
+      "name": "Home Theater Installation",
+      "description": "Design and installation of custom home theater systems, including surround sound and high-definition displays.",
+      "features": [
+        "Audio Calibration",
+        "Projector Mounting",
+        "Acoustic Paneling"
+      ],
+      "image": "home_theater.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Corporate AV Solutions",
+      "description": "Robust audio-visual setups for boardrooms, meeting spaces, and training rooms, designed to enable seamless presentations and collaboration.",
+      "features": [
+        "Video Conferencing",
+        "Digital Signage",
+        "Networked Control Systems"
+      ],
+      "image": "corporate_av.png"
+    },
+    {
+      "id": 3,
+      "name": "Smart Home Integration",
+      "description": "Automate and synchronize lighting, climate control, and media across your home for a more convenient and energy-efficient lifestyle.",
+      "features": [
+        "Voice Assistant Integration",
+        "Centralized Control Interface",
+        "Security & Monitoring"
+      ],
+      "image": "smart_home.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Outdoor Sound Systems",
+      "description": "Weather-resistant speaker setups designed to deliver high-fidelity sound in gardens, patios, or poolside areas.",
+      "features": [
+        "All-Weather Speakers",
+        "Hidden Cable Management",
+        "Integrated Zone Control"
+      ],
+      "image": "outdoor_sound.png"
+    },
+    {
+      "id": 5,
+      "name": "Q-SYS Programming",
+      "description": "Custom design and programming of Q-SYS systems for unified audio, video, and control functionalities in any environment.",
+      "features": [
+        "DSP Configuration",
+        "User Control Interface (UCI)",
+        "Network Monitoring & Diagnostics"
+      ],
+      "image": "qsys_programming.jpg"
+    }
+  ]
+  

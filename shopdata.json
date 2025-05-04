@@ -1,0 +1,50 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Home Theater Installation",
+        "category": "home-theater",
+        "description": "Custom home theater setup with surround sound.",
+        "price": 2500,
+        "availability": "in-stock",
+        "image": "images/uci.png"
+      },
+      {
+        "id": 2,
+        "name": "Corporate AV Solutions",
+        "category": "corporate-av",
+        "description": "Complete AV setup for boardrooms and meetings.",
+        "price": 4000,
+        "availability": "in-stock",
+        "image": "images/uci.png"
+      },
+      {
+        "id": 3,
+        "name": "Smart Home Integration",
+        "category": "smart-home",
+        "description": "Automated smart home systems for convenience.",
+        "price": 3500,
+        "availability": "out-of-stock",
+        "image": "images/uci.png"
+      },
+      {
+        "id": 4,
+        "name": "Outdoor Sound Systems",
+        "category": "outdoor-sound",
+        "description": "Weather-resistant audio systems for outdoor spaces.",
+        "price": 1800,
+        "availability": "in-stock",
+        "image": "images/uci.png"
+      },
+      {
+        "id": 5,
+        "name": "Q-SYS Programming",
+        "category": "qsys-programming",
+        "description": "Custom Q-SYS programming for AV control solutions.",
+        "price": 3000,
+        "availability": "in-stock",
+        "image": "images/uci.png"
+      }
+    ]
+  }
+  
